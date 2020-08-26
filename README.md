@@ -29,10 +29,8 @@ This program assembles the phi X174 phage genome from its 10-mer composition
 by constructing a De Bruijn graph and finding an Eulerian path. 
 
 [run_analysis.R](https://github.com/rydcormier/Code-Examples/blob/master/tidy_data/run_analysis.R)  
-An example of "tidy data"; This script downloads the 
-*Human Activity Recognition Using Smartphones Data Set* ( check it out [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) ) from the UCI Machine Learning Repository, merges the training and test
-sets, extracts measurements on the mean and standard deviation, descriptively
-names the labels and feautures, and stores the data in a single object. The
+Retrieves and tidies the [*Human Activity Recognition Using Smartphones Data Set*](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) from the 
+UCI Machine Learning Repository. The 
 [codebook](https://github.com/rydcormier/Code-Examples/blob/master/tidy_data/CodeBook.md) provides a more detailed description. 
 
 [tip_removal.cpp](https://github.com/rydcormier/Code-Examples/blob/master/tip_removal.cpp)  
