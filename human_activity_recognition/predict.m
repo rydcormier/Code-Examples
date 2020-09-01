@@ -18,11 +18,6 @@ for i = 2:L
     Theta{ i - 1 } = reshape( theta(first:last), L_out, 1 + L_in );
 end
 
-
-h1 = sigmoid([ones(m, 1) X] * Theta1');
-h2 = sigmoid([ones(m, 1) h1] * Theta2');
-[dummy, p] = max(h2, [], 2);
-
 % Feed forward to get values
 h = [];
 for i = 1:L-1

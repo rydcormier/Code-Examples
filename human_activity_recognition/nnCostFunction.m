@@ -20,7 +20,7 @@ function [ J grad ] = nnCostFunction( nn_params, s, X, y, lambda )
 
 m = size( X, 1 );       % number of training examples
 L = length( s );        % number of layers
-K = s( end )            % number of output units
+K = s( end );           % number of output units
 J = 0;                  % cost
 grad = [];              % gradient
 
