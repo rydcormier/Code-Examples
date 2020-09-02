@@ -17,7 +17,6 @@ function [ J grad ] = nnCostFunction( nn_params, s, X, y, lambda )
 %	Author	  : Ryan Cormier <rydcormier@gmail.com>
 %	Date	  : 8/6/20
 % ===========================================================================
-
 m = size( X, 1 );       % number of training examples
 L = length( s );        % number of layers
 K = s( end );           % number of output units
@@ -76,7 +75,7 @@ end
 
 % Add regularization term to cost
 for l = 1:( L - 1 )
-    t = theta{ l }( : , 2:end )( : ) % unrolled params; ignoring bias
+    t = theta{ l }( : , 2:end )( : ); % unrolled params; ignoring bias
     J = J + ( 1 / 2 ) * ( lambda / m ) * sum( t .^ 2 );
 end
 
@@ -119,7 +118,7 @@ for i = 1:m
         %[ dr, dc ] = size(delta{l+1});
         %[ ar, ac ] = size(a{l});
         %fprintf('Line 117: (%d x %d) * (%d x %d)\n\n', dr, dc, ar, ac);
-        %Delta{ l } = Delta{ l } + ( delta{ l + 1 } * a{ l }( i, : ) );
+        Delta{ l } = Delta{ l } + ( delta{ l + 1 } * a{ l }( i, : ) );
     end
 
 end

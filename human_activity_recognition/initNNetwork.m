@@ -37,26 +37,24 @@ for i = 1:L - 1
     init_params = [ init_params; theta(:) ];
 end
 
-% set options for fmincg
-options = optimset('GradObj', 'on', 'MaxIter', 50);
-
 % set regularization
-lambda_range = [ 0.001, 0.003, 0.005, 0.01, 0.03, 0.05, 0.1, 0.3, 0.5, ...
-                 1.0, 3.0, 5.0, 10.0, 30.0, 50.0 ];
+lambda_range = [ 0.1, 0.3 ];%0.1, 0.3, 0.5, ...
+                 %1.0, 3.0, 5.0];
 
 best_accuracy = 0;
 lambda = 0;
 
 % set options for fmincg
-options = optimset('GradObj', 'on', 'MaxIter', 20);
+options = optimset('GradObj', 'on', 'MaxIter', 1);
 
 for l = lambda_range
+	%fprintf('\nTraining with lambda = %d\n', l);
     theta = fmincg(@(t)(nnCostFunction(t, S, X, y, l)), init_params, options);
 
     % check performance
     p = predict(theta, S, Xval);
     accuracy = mean(double(p == yval));
-    
+    %fprintf('accuracy: %f\n', accuracy);
     if accuracy > best_accuracy
         best_accuracy =  accuracy;
         lambda = l;
