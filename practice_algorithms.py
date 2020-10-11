@@ -133,3 +133,21 @@ def max_run(elements):
     return max_len
 
 
+def max_palindrome(s):
+    """Finds the length of the longest palindrome that is a substring of s.
+        Parameters:
+            s: a string
+        Returns:
+            int: maximum palindrome length or 0 if none exists.
+    """
+    l = len(s)
+    # check each substring in decreasing order by length.
+    for j in range(l, 1, -1):
+        i = 0
+        while i + j <= l:
+            sub = s[i:i + j]
+            print(i, j, sub)
+            if sub == sub[::-1]:    # palindrome
+                return j
+            i += 1
+    return 0

@@ -36,7 +36,3 @@ UCI Machine Learning Repository. The
 [tip_removal.cpp](https://github.com/rydcormier/Code-Examples/blob/master/tip_removal.cpp)  
 This program simulates the task of tip removal on a De Bruign graph constructed   
 from a set of error-prone reads.
-
-[translate](https://github.com/rydcormier/Code-Examples/tree/master/translate) 
-A simple, easy-to-use command line translator using the Google Transaltion 
-API. This is from a Topcoder practice challenge.
